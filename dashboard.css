@@ -1,0 +1,374 @@
+/* dashboard.css - professional sidebar and vibrant cards for manager & employee */
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f4f8;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background-color: #3c3f72;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10; /* Keep sidebar above main content */
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #999;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.user-details p {
+    line-height: 1.2;
+    font-weight: 600;
+    color: #f0f4f8;
+}
+
+.user-details p:first-child {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-grow: 1;
+}
+
+.sidebar-nav a {
+    color: #d6d6d6;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    user-select: none;
+    margin-bottom: 0.4rem; /* prevent overlap */
+}
+
+.sidebar-nav a i {
+    min-width: 22px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background-color: #585bbf;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(88,91,191,0.6);
+}
+
+/* Disabled links styling */
+.sidebar-nav a.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+    color: #ccc !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Scrollbar styling for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+}
+
+.logout-btn {
+    margin-top: auto;
+    background-color: #ff4c4c;
+    font-weight: 800;
+    text-align: center;
+    padding: 0.9rem 0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 76, 76, 0.7);
+    user-select: none;
+    color: #fff;
+}
+
+.logout-btn:hover {
+    background-color: #cc3a3a;
+    box-shadow: 0 7px 25px rgba(204, 58, 58, 0.85);
+}
+
+.main-content {
+    flex-grow: 1;
+    min-width: 0; /* Allow shrinking and prevent overlap */
+    padding: 2rem 2rem;
+    overflow-y: auto;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+
+    width: 1500pt;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header.dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+header.dashboard-header h1 {
+    font-weight: 900;
+    font-size: 2rem;
+    color: #3c3f72;
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header.dashboard-header p {
+    font-weight: 600;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+/* Buttons container in header for employee */
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-buttons a {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.8);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.header-buttons a:hover {
+    background-color: #3378c7;
+    box-shadow: 0 12px 45px rgba(51, 120, 199, 0.9);
+}
+
+.header-buttons a i {
+    font-size: 1.2rem;
+}
+
+/* Manager Dashboard Cards */
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    justify-content: flex-start;
+    max-width: 900px; /* restrict max width so cards don't stretch too far */
+}
+
+/* Manager card base */
+.card {
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    flex: 1 1 160px;
+    max-width: 190px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    user-select: none;
+    color: #fff;
+}
+
+/* Manager card icon */
+.card i {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Manager card colors */
+.card-inventory {
+    background-color: #4a90e2;
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.8);
+}
+.card-inventory:hover {
+    background-color: #3378c7;
+    box-shadow: 0 12px 45px rgba(51, 120, 199, 0.9);
+}
+
+.card-reports {
+    background-color: #e67e22;
+    box-shadow: 0 8px 30px rgba(230, 126, 34, 0.8);
+}
+.card-reports:hover {
+    background-color: #bf6519;
+    box-shadow: 0 12px 45px rgba(191, 101, 25, 0.9);
+}
+
+.card-history {
+    background-color: #27ae60;
+    box-shadow: 0 8px 30px rgba(39, 174, 96, 0.8);
+}
+.card-history:hover {
+    background-color: #1e9a4a;
+    box-shadow: 0 12px 45px rgba(30, 154, 74, 0.9);
+}
+
+.card-alerts {
+    background-color: #e74c3c;
+    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.8);
+}
+.card-alerts:hover {
+    background-color: #b83529;
+    box-shadow: 0 12px 45px rgba(184, 53, 41, 0.9);
+}
+
+.card-users {
+    background-color: #8e44ad;
+    box-shadow: 0 8px 30px rgba(142, 68, 173, 0.8);
+}
+.card-users:hover {
+    background-color: #6c3493;
+    box-shadow: 0 12px 45px rgba(108, 52, 147, 0.9);
+}
+
+.card-announcement {
+    background-color: #f39c12;
+    box-shadow: 0 8px 30px rgba(243, 156, 18, 0.8);
+}
+.card-announcement:hover {
+    background-color: #c77e0c;
+    box-shadow: 0 12px 45px rgba(199, 126, 12, 0.9);
+}
+
+/* Employee cards with vibrant colors */
+.card-custom {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 1rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.card-custom i {
+    margin-bottom: 0.7rem;
+    font-size: 2.8rem;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+}
+
+/* Employee card colors */
+.card-custom:nth-child(1) { background: #4a90e2; }  /* blue */
+.card-custom:nth-child(2) { background: #e67e22; }  /* orange */
+.card-custom:nth-child(3) { background: #27ae60; }  /* green */
+.card-custom:nth-child(4) { background: #9b59b6; }  /* purple */
+.card-custom:nth-child(5) { background: #e74c3c; }  /* red */
+.card-custom:nth-child(6) { background: #16a085; }  /* teal */
+
+.card-custom:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body, html {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        flex-direction: row;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .dashboard-cards {
+        justify-content: center;
+        max-width: 100%;
+    }
+}
+
+/* Red dot notification for announcements */
+
+.notification-dot {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 14px;
+    height: 14px;
+    background-color: #d63031;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(214, 48, 49, 0.8);
+    pointer-events: none;
+}
+
+/* For announcement nav links and cards position relative for dot */
+.nav-link.announcement-link,
+.card.card-announcement {
+    position: relative;
+}
