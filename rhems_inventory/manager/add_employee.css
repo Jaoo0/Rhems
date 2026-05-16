@@ -1,0 +1,142 @@
+/* update_employee.css - full width layout with spacious form */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 2rem 6rem;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+@media (min-width: 1400px) {
+    body {
+        margin: 2rem 12rem;
+    }
+}
+
+h1 {
+    color: #3c3f72;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+a.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #585bbf;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+a.back-link:hover {
+    color: #3c3f72;
+    text-decoration: underline;
+}
+
+/* Form styles */
+form {
+    background-color: #fff;
+    padding: 2.5rem 3.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3rem;
+    grid-row-gap: 1.8rem;
+    align-items: center;
+}
+
+/* Labels span full width */
+form label {
+    font-weight: 600;
+    color: #3c3f72;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+/* Inputs full width inside each grid cell */
+form input,
+form select {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #585bbf;
+}
+
+/* Error and success messages */
+.error, .success {
+    grid-column: 1 / -1;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+}
+
+.error {
+    color: #e74c3c;
+    background-color: #fbeaea;
+    margin-bottom: 1.2rem;
+}
+
+.success {
+    color: #27ae60;
+    background-color: #e6f4ea;
+    margin-bottom: 1.2rem;
+}
+
+/* Submit button spans both columns */
+button[type="submit"] {
+    grid-column: 1 / -1;
+    background-color: #585bbf;
+    color: white;
+    font-weight: 700;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #3c3f72;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    body {
+        margin: 2rem 3rem;
+    }
+    form {
+        grid-template-columns: 1fr;
+        padding: 2rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 1rem 1.5rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem;
+        padding: 0.9rem 0;
+    }
+}

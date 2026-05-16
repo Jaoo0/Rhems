@@ -1,0 +1,152 @@
+/* low_stock_alerts.css - professional & dashboard style */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 2rem 4rem;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+    body {
+        margin: 2rem 8rem;
+    }
+}
+
+h1 {
+    color: #3c3f72;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+a.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #585bbf;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+a.back-link:hover {
+    color: #3c3f72;
+    text-decoration: underline;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background-color: transparent;
+}
+
+thead th {
+    background-color: #3c3f72;
+    color: white;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: left;
+    border-radius: 8px 8px 0 0;
+    user-select: none;
+}
+
+tbody tr {
+    background-color: #fff;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+tbody tr:hover {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+}
+
+tbody td {
+    padding: 14px 20px;
+    vertical-align: middle;
+    color: #444;
+    font-size: 0.95rem;
+    border-bottom: none;
+}
+
+tbody td img.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+/* Quantity and Price alignment */
+tbody td:nth-child(5),
+tbody td:nth-child(6) {
+    text-align: center;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    body {
+        margin: 1.5rem 3rem;
+    }
+    table thead th, tbody td {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 1rem 1.5rem;
+    }
+
+    table {
+        border-spacing: 0 6px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 12px;
+        border-bottom: 1px solid #ddd;
+        font-size: 0.9rem;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #3c3f72;
+        flex-basis: 40%;
+        max-width: 40%;
+        white-space: nowrap;
+    }
+
+    tbody td:nth-child(5),
+    tbody td:nth-child(6) {
+        flex-basis: 55%;
+        max-width: 55%;
+        text-align: right;
+    }
+
+    tbody td img.thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+}

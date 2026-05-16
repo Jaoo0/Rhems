@@ -1,0 +1,98 @@
+/* announcement.css */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #3c3f72;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #585bbf;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #3c3f72;
+  text-decoration: underline;
+}
+
+.no-announcements {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+.announcement {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  padding: 1.8rem 2.4rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.announcement:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.announcement h2 {
+  margin-top: 0;
+  color: #4745d7;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.announcement p {
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  color: #444;
+}
+
+.announcement footer {
+  border-top: 1px solid #eee;
+  padding-top: 0.75rem;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #777;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .announcement {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .announcement h2 {
+    font-size: 1.3rem;
+  }
+}

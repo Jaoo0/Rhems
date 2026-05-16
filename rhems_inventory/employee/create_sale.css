@@ -1,0 +1,177 @@
+/* Reset and base styles */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.5;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    max-width: 850px;
+    width: 100%;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #3c3f72;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #4745d7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+.sale-form label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    color: #555;
+}
+
+.sale-form input[type="text"],
+.sale-form input[type="number"],
+.sale-form select,
+.sale-form textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.sale-form input[type="text"]:focus,
+.sale-form input[type="number"]:focus,
+.sale-form select:focus,
+.sale-form textarea:focus {
+    border-color: #4745d7;
+    outline: none;
+}
+
+/* Checklist styles */
+.checklist-fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #f9fafb;
+}
+
+.checklist-fieldset legend {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #4745d7;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+.select-all-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.checklist-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+}
+
+.checklist-group label {
+    width: 220px;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+}
+
+.checklist-group input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Remarks textarea */
+#remarks {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 0.5rem;
+}
+
+/* Submit button */
+.submit-btn {
+    background-color: #4745d7;
+    color: white;
+    font-weight: 800;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 15px rgba(71, 69, 215, 0.75);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.submit-btn:hover {
+    background-color: #322eb3;
+    box-shadow: 0 9px 20px rgba(50, 46, 179, 0.9);
+}
+
+/* Error and success messages */
+.error-message {
+    background-color: #fdecea;
+    color: #d93025;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.success-message {
+    background-color: #e6f4ea;
+    color: #188038;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .checklist-group label {
+        width: 100%;
+    }
+}
